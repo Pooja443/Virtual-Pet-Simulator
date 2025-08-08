@@ -1,0 +1,56 @@
+:root {
+    --alert-bg-overlay: rgba(0, 0, 0, 0.7);
+    --alert-box-bg: #fff;
+    --alert-box-shadow-color: rgba(255, 51, 102, 0.7);
+    --alert-text-color: #222;
+    --alert-btn-bg: #ff3366;
+    --alert-btn-bg-hover: #e02658;
+    --alert-btn-text-color: white;
+    }
+
+.custom-alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--alert-bg-overlay);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    /*hide the alert box at the initial stage */
+    display: none; 
+}
+
+.custom-alert-box {
+    background: var(--alert-box-bg);
+    border-radius: 10px;
+    padding: 20px 30px;
+    max-width: 300px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 0 15px var(--alert-box-shadow-color);
+}
+
+.custom-alert-box p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--alert-text-color);
+}
+
+.custom-alert-box button {
+    background-color: var(--alert-btn-bg);
+    border: none;
+    padding: 10px 20px;
+    color: var(--alert-btn-text-color);
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-alert-box button:hover {
+    background-color: var(--alert-btn-bg-hover);
+    
+}
