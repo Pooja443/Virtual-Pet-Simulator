@@ -1,0 +1,53 @@
+.dog-food {
+    position: absolute;
+    left: 40%;
+    bottom: 0px;
+    object-fit: cover;
+    width: 300px;
+    height: 400px;
+    padding: 0;
+    border: none;
+    background: none;
+    z-index: 2;
+}
+
+.dog-hygiene {
+    position: absolute;
+    left: 40%;
+    bottom: 0px;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    padding: 0;
+    border: none;
+    background: none;
+    z-index: 2;
+}
+
+.dog-sleep {
+    position: absolute;
+    left: 40%;
+    bottom: 0px;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    padding: 0;
+    border: none;
+    background: none;
+    z-index: 2;
+}
+
+.dog-happy ,.dog-default {
+    position: absolute;
+    left: 40%;
+    bottom: 5px;
+    width: 400px;
+    height: 400px;
+    padding: 0;
+    border: none;
+    object-fit: cover;
+    background: none;
+    z-index: 2;
+}
+
+
