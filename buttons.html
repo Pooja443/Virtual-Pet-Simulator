@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style/character-mood-style.css" />
+  <title>Document</title>
+</head>
+<body>
+  <div class="buttons">
+    <div class="level-xp-container">
+      <div id="level-text">Level: 1</div>
+      <div class="xp-bar">
+        <div id="xp-fill"></div>
+      </div>
+    </div>
+
+    <div class="mood-btn-wrapper">
+      
+      <a href="hygiene.html" data-mood="hygiene">
+        <div class="circular-progress">
+          <input type="range" id="heart-progress" min="0" max="100" value="0" />
+          <img src="game-assets/heart-icon-removebg-preview.png" class="heart" loading="lazy" />
+        </div>
+      </a>
+
+      <a href="food-page.html" data-mood="food">
+        <div class="circular-progress">
+          <input type="range" id="food-progress" min="0" max="100" value="0" />
+          <img src="game-assets/food-icon-removebg-preview.png" class="food" loading="lazy" />
+        </div>
+      </a>
+
+      <a href="hallway.html" data-mood="happy">
+        <div class="circular-progress">
+          <input type="range" id="happy-progress" min="0" max="100" value="0" />
+          <img src="game-assets/smile-icon-removebg-preview.png" class="happy" loading="lazy" />
+        </div>
+      </a>
+
+      <a href="sleep.html" data-mood="sleep">
+        <div class="circular-progress">
+          <input type="range" id="sleep-progress" min="0" max="100" value="0" />
+          <img src="game-assets/sleepicon.png" class="sleep" loading="lazy" />
+        </div>
+      </a>
+      <a href="garden-page.html" data-mood="garden">
+          <img src="game-assets/main-page-icon.png" class="main-page-icon" loading="lazy" />
+        </div>
+      </a>
+    </div>
+
+    <div>
+      <button class="back-btn">
+        <img src="game-assets/left-arrow.png" loading="lazy" />
+      </button>
+    </div>
+  </div>
+  <script src="script/random-pet-dog.js+69"></script>
+  <script src="script/mood-sync.js"></script>
+  <script>
+    //play sound when the icons are clicked
+    const buttons = document.querySelectorAll("a");
+    buttons.forEach(a => {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        const clickSound = new Audio("game-assets/confirmation_001.ogg");
+        clickSound.play();
+        setTimeout(() => {
+          window.location.href = a.getAttribute("href");
+        }, 400);
+      });
+    });
+  </script>
+
+
+</body>
+</html>

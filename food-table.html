@@ -1,0 +1,159 @@
+<!-- food-table.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HappyVille - Food Table</title>
+  <link rel="stylesheet" href="style/character-mood-style.css" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    button{
+        background: none;
+        border: none;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 150px 1fr 150px;
+      width: 100%;
+      height: 100%;
+      background: url("game-assets/kitchen.jpg");
+      background-size: cover;
+    }
+    .add-table {
+      position: absolute;
+      top: 60%;
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      z-index: 1;
+    }
+    .table-dog {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 420px;
+      height: 400px;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .mood-bar-wrapper {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 20px;
+      background: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      z-index: 3;
+    }
+    .mood-bar-wrapper input[type='range'] {
+      width: 100%;
+      height: 100%;
+      appearance: none;
+      background: transparent;
+      pointer-events: none;
+    }
+    .cart-btn {
+      position: absolute;
+      top: 76%;
+      left: 25%;
+      width: 100px;
+      height: 100px;
+      z-index: 3;
+      cursor: pointer;
+    }
+    .food-grid {
+      display: flex;
+      gap: 30px;
+      position: absolute;
+      top: 76%;
+      left: 30%;
+      z-index: 4;
+    }
+    .added-food-img {
+      width: 150px;
+      height: 100px;
+      object-fit: contain;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+      <div id="buttons-placeholder"></div>
+      <div>
+    <img src="game-assets/table.png" class="add-table">
+    <img src="game-assets/dog-character.gif" class="table-dog" id="tableDog">
+    <a href="food-items.html">
+      <img src="game-assets/cart-img.png" class="cart-btn">
+    </a>
+    </div>
+    <div class="food-grid" id="foodGrid"></div>
+    <div class="ui-icon-wrapper">
+    <div id="coins-placeholder"></div>
+    <div id="ui-icons"></div>
+    </div>
+  </div>
+    <script src="script/localStorage.js"></script> 
+    <script src="script/mood-update.js"></script>
+    <script src="script/fetch-buttons.js"></script>
+    <script src="script/coins-diamonds-count.js"></script>
+    <script src="script/UI-icons.js"></script>
+    <script src="script/level-xp.js"></script>
+    <script>
+    const foodGrid = document.getElementById("foodGrid");
+    const tableDog = document.getElementById("tableDog");
+
+    // Load cart from storage
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    // Loop each cart item
+    cartItems.forEach((src, index) => {
+      const foodimg = document.createElement('img'); // Create img
+      foodimg.src = src; // Set src
+      foodimg.classList.add('added-food-img'); // Add class
+      foodimg.dataset.cartIndex = index; // Save index
+      foodGrid.appendChild(foodimg); // Add to grid
+
+      // Click food image
+      foodimg.addEventListener('click', () => {
+        foodimg.remove(); // Remove from grid
+
+        increaseMode("food-progress", "foodupdates"); // Increase food mood
+
+        tableDog.src = "game-assets/dog-chewing.gif"; // Dog chewing
+        new Audio("game-assets/delicious-sound.mp3").play(); // Play sound
+        setTimeout(() => {
+          tableDog.src = "game-assets/dog-character.gif"; // Back to normal
+        }, 1000);
+
+        new Audio("game-assets/bubble-pop-06-351337.mp3").play(); // Bubble sound
+
+        // Update cart storage
+        let currentCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const indexToRemove = parseInt(foodimg.dataset.cartIndex);
+        currentCart.splice(indexToRemove, 1); // Remove clicked item
+        localStorage.setItem('cartItems', JSON.stringify(currentCart));
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("food-progress");
+      const saved = localStorage.getItem("food-progress");
+      if (saved !== null) {
+        input.value = saved;
+        input.parentElement.style.background = `conic-gradient(#ff3366 ${saved}%, #dddddd ${saved}%)`;
+      }
+    });
+  </script>
+</body>
+</html>

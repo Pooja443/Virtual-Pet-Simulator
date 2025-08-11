@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happyville</title>
+  <link rel="stylesheet" href="style/hygiene.css">
+  <link rel="stylesheet" href="style/coins.css">
+  <style>
+    body{
+      background: url("game-assets/bathroom-image.jpg") no-repeat fixed center;
+      background-size: cover;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="hygeine-page-container">
+    <div id="buttons-placeholder"></div>
+    <div class="lavatory-column">
+      <button class="flush-btn"></button>
+      <button class="toilet"><img src="game-assets/toilet-img.png" loading="lazy" /></button>
+    </div>
+    <div class="bathtub-wrapper">
+      <button class="dog-btn"></button>
+      <button class="bathtub-btn"><img src="game-assets/bathtub-Photoroom-removebg-preview.png" loading="lazy" /></button>
+      <button class="shower-head"><img src="game-assets/shower-head-img.png" /></button>
+      <button class="sponge"><img src="game-assets/sponge.png" loading="lazy" /></button>
+    </div>
+    <div class="ui-icon-wrapper">
+      <div id="coins-placeholder"></div>
+      <div id="ui-icons"></div>
+    </div>
+  </div>
+
+  <script src="script/last-visited.js"></script>
+  <script src="script/localStorage.js"></script>
+  <script src="script/mood-update.js"></script>
+  <script src="script/fetch-buttons.js"></script>
+  <script src="script/coins-diamonds-count.js"></script>
+  <script src="script/UI-icons.js"></script>
+  <script src="script/level-xp.js"></script>
+  <script src="script/mood-sync.js"></script>
+  <script src="script/random-pet-dog.js"></script>
+
+  <script src="script/hygiene.js"></script>
+
+</body>
+</html>

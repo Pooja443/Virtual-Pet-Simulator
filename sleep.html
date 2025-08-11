@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style/coins.css">
+    <link rel="stylesheet" href="style/character-mood-style.css">
+    <link rel="stylesheet" href="style/custom-alert-box.css">
+    <link rel="stylesheet" href="style/sleep.css">
+    
+    <title>HappyVille</title>
+    <style>
+      body{
+        background: url("game-assets/day-theme-bedroom.png") no-repeat fixed center;
+        background-size: cover;
+      }
+    </style>
+
+</head>
+<body>
+    <div class="bed-room-container">
+        <div id="buttons-placeholder"></div> 
+        <div class="dog-container">
+            <button class="day-window"></button>
+            <img class="day-bed" src="game-assets/day-theme-bed.png">
+            <button class="dog-btn"></button> 
+      </div>
+    <div class="ui-icon-wrapper">
+      <div id="coins-placeholder"></div>
+      <div id="ui-icons"></div>
+    </div>
+    <div id="custom-alert" class="custom-alert-overlay">
+    <div class="custom-alert-box">
+      <p id="custom-alert-message"></p>
+      <button id="custom-alert-ok">OK</button>
+    </div>
+  </div>
+    </div>
+
+
+    <!-- JS Scripts -->
+  <script src="script/last-visited.js"></script>
+  <script src="script/localStorage.js"></script>
+  <script src="script/mood-update.js"></script>
+  <script src="script/fetch-buttons.js"></script>
+  <script src="script/coins-diamonds-count.js"></script>
+  <script src="script/UI-icons.js"></script>
+  <script src="script/level-xp.js"></script>
+  <script src="script/mood-sync.js"></script>
+  <script src="script/random-pet-dog.js"></script>>
+  <script src="script/sleep.js"></script>
+  <script src="script/custom-alert-box.js"></script>
+
+</body>
+</html>

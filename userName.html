@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/custom-alert-box.css">
+    <title>HappyVille</title>
+    <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+
+    }
+    button{
+        cursor: pointer;
+    }
+    html, body{
+      width: 100%;
+      height: 100%;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url("game-assets/userName-bg.png") no-repeat center fixed;
+        background-size: cover;
+        overflow: hidden;
+    }
+    .back-btn{
+        position: absolute;
+        left: 0;
+        margin-left: 30px;
+        top: 80%;
+    }
+    .back-btn:active{
+        opacity: 0.3;
+    }
+    .container{
+        width: 550px;
+    }
+    .username img{
+        width: 300px;
+    }
+    .text-container{
+        
+        width: 500px;
+        height: 400px;
+        border-radius: 10px;
+        border: 6px solid #883302;
+        
+    }
+    .text-box{
+        padding: 50px;
+        width: 100%;
+        height: 100%;
+        border: 12px solid #FFAF49;
+        background-color: #FDE6A3;
+    }
+    .username{
+        position: absolute;
+        left: 41%;
+        top: 25%;
+    }
+    .input-text{
+        border: 10px solid #FFAF49;
+        border-radius: 20px;
+        resize: none;
+        padding: 30px;
+        width: 100%;
+        font-size: 2rem;
+        height: 150px;
+        overflow: hidden;
+    }
+    .input-text:focus{
+        border: 10px solid #FFAF49;
+        outline: #FFAF49;
+    }
+    .button-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 20px;
+    }
+    button{
+        background:none;
+        border: none;
+    }
+    img{
+        width: 100%;
+    }
+    .ok-btn{
+        width: 90%;
+    }
+    .cancel-btn{
+        width: 70%;
+        margin-left: 50px;
+    }
+    .ok-btn:active ,.cancel-btn:active{
+        transform: scale(1.1);
+    }
+    </style>
+</head>
+<body>
+    <button class="back-btn"><img src="game-assets/left-arrow.png"></button>
+    <div class="container">
+    <div class="text-container">
+    <div class="text-box">
+        <div class="username">
+        <img src="game-assets/username.png">
+    </div>
+    <div>
+        <textarea class="input-text" ></textarea>
+    </div>
+    <div class="button-container">
+        <button class="ok-btn"><img src="game-assets/ok-btn.png"></button>
+        <button class="cancel-btn"><img src="game-assets/cancel-btn.png" ></button>
+    </div>
+        </div>
+    </div>
+    <div id="custom-alert" class="custom-alert-overlay">
+    <div class="custom-alert-box">
+      <p id="custom-alert-message"></p>
+      <button id="custom-alert-ok">Ok</button>
+    </div>
+  </div>
+    </div>
+    <script src="script/custom-alert-box.js"></script>
+    <script>
+        const AlertokBtn = document.getElementById("custom-alert-ok");
+        const backBtn = document.querySelector(".back-btn");
+        backBtn.addEventListener("click",function(){
+            const background = new Audio("background-music.mp3");
+            background.play();
+            window.location.href = "homepage.html";
+        })
+        const okBtn = document.querySelector(".ok-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        const textValue = document.querySelector(".input-text");
+        okBtn.addEventListener("click", function(e){
+            e.preventDefault();
+            const okSound = new Audio("game-assets/click.wav");
+            okSound.play();
+            if(textValue.value === ""){
+                okSound.play();
+                return;
+            }
+            else{
+                showCustomAlert(`Welcome to HappyVille ${textValue.value}`);
+            }
+            AlertokBtn.addEventListener("click",()=>{
+                window.location.href = "garden-page.html";
+            })
+                
+           
+            
+        })
+        cancelBtn.addEventListener("click", function(){
+            const cancelSound = new Audio("game-assets/cancel.mp3")
+            cancelSound.play();
+            textValue.value= "";
+        })
+        
+    </script>
+</body>
+</html>

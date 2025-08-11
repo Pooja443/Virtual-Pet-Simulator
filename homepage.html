@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happyville</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    html, body{
+      width: 100%;
+      height: 100%;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url("game-assets/homepage-poster.jpg") no-repeat center fixed;
+      background-size: cover;
+    }
+
+    .start-btn{
+      width: 300px;
+      height: 200px;
+      background:none;
+      object-fit: cover;
+      border: none;
+      
+  
+    }
+    .start-btn img{
+      width: 100%;
+      height: 100%;
+       object-fit: cover;
+       cursor: pointer;
+       transition: 0.1s ease-in-out;
+      
+    }
+    .start-btn img:hover{
+      transform: scale(1.1);
+      
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="background-music.mp3" type="audio/mp3">
+  </audio>
+    <a href="hallway.html" class="start-btn"><img src="game-assets/startButton.png"></a>
+</body>
+<script>
+  
+  const startBtn = document.querySelector(".start-btn");
+  const clickSound = new Audio("game-assets/confirmation_001.ogg");
+  startBtn.addEventListener("click",function(event){
+    event.preventDefault();
+    clickSound.play();
+    setTimeout(()=>{
+      //opens username.html when clicked
+      window.location.href = "userName.html";
+    },200)
+  })
+</script>
+</html>

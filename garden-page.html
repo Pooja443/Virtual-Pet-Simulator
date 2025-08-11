@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyVille</title>
+    <link rel="stylesheet" href="style/custom-alert-box.css">
+    <link rel="stylesheet" href="style/dog-styles.css">
+    <link rel="stylesheet" href="style/character-mood-style.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            width: 100%;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+            background: url("game-assets/garden-page.jpg") no-repeat fixed center;
+            background-size: cover;
+        }
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 150px 1fr 150px;
+            height: 100%;
+        }
+        .dog-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            padding: 20px;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div id="buttons-placeholder"></div>
+    <div class="dog-container">
+        <button class="dog-btn"></button>
+      </div>
+    <div class="ui-icon-wrapper">
+      <div id="coins-placeholder"></div>
+      <div id="ui-icons"></div>
+    </div>
+    </div>
+    <!-- Custom Alert Modal -->
+    <div id="custom-alert" class="custom-alert-overlay">
+    <div class="custom-alert-box">
+        <p id="custom-alert-message"></p>
+        <button id="custom-alert-ok">OK</button>
+    </div>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="script/last-visited.js"></script>
+    <script src="script/localStorage.js"></script>
+    <script src="script/mood-update.js"></script>
+    <script src="script/fetch-buttons.js"></script>
+    <script src="script/coins-diamonds-count.js"></script>
+    <script src="script/UI-icons.js"></script>
+    <script src="script/level-xp.js"></script>
+    <script src="script/mood-sync.js"></script>
+    <script src="script/random-pet-dog.js"></script>
+</body>
+</html>

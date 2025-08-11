@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HappyVille</title>
+  <link rel="stylesheet" href="style/character-mood-style.css">
+  <link rel="stylesheet" href="style/food-page.css">
+  <style>
+    body{
+      background: url("game-assets/kitchen.jpg") no-repeat fixed center;
+      background-size: cover;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div id="buttons-placeholder"></div>
+
+    <div class="dog-container">
+      <button class="dog-btn"></button> <!-- Dynamic dog image here -->
+    </div>
+
+    <div class="fridge">
+      <button class="fridge-button" onclick="window.location.href = 'food-table.html'">
+        <img src="game-assets/open-2033.png" loading="lazy" />
+      </button>
+    </div>
+
+    <div class="ui-icon-wrapper">
+      <div id="coins-placeholder"></div>
+      <div id="ui-icons"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script/last-visited.js"></script>
+  <script src="script/localStorage.js"></script>
+  <script src="script/mood-update.js"></script>
+  <script src="script/fetch-buttons.js"></script>
+  <script src="script/coins-diamonds-count.js"></script>
+  <script src="script/UI-icons.js"></script>
+  <script src="script/level-xp.js"></script>
+  <script src="script/mood-sync.js"></script>
+  <script src="script/random-pet-dog.js"></script>
+  <script src="script/custom-alert-box.js"></script>

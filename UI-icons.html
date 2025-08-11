@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html,body {
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+    }
+    .coins-wrapper{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        height: 100%;
+    }
+    .icons{
+        display: grid;
+        grid-template-columns: 50px 50px;
+        gap: 20px;
+    }
+    .icons img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        margin-top: 10px;
+}
+</style>
+<body>  <div class="coins-wrapper">
+        <div class="icons">
+            <button class="home-btn"><img src="game-assets/home-btn.png"></button>
+            <button class="on-btn"><img src="game-assets/volume-off-btn.png"></button>
+        </div>
+        </div>
+
+</body>
+</html>

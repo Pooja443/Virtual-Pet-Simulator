@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style/custom-alert-box.css">
+  <link rel="stylesheet" href="style/food-items.css">
+  <style>
+    body{
+      background: url("game-assets/shop-img.png") no-repeat center fixed;
+      background-size: cover;
+    }
+    
+  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HappyVille</title>
+
+</head>
+<body>
+  <div class="container">
+    <div>
+      <button class="back-btn">
+        <img src="game-assets/left-arrow.png" loading="lazy" />
+      </button>
+    </div>
+    <div id="food-items"></div>
+    <div id="coins-placeholder"></div>
+  </div>
+  <div id="custom-alert" class="custom-alert-overlay">
+    <div class="custom-alert-box">
+      <p id="custom-alert-message"></p>
+      <button id="custom-alert-ok">OK</button>
+    </div>
+  </div>
+
+  <script src="script/last-visited.js"></script>
+  <script src="script/localStorage.js"></script>
+  <script src="script/mood-update.js"></script>
+  <script src="script/fetch-buttons.js"></script>
+  <script src="script/coins-diamonds-count.js"></script>
+  <script src="script/UI-icons.js"></script>
+  <script src="script/level-xp.js"></script>
+  <script src="script/mood-sync.js"></script>
+  <script src="script/custom-alert-box.js"></script>
+  <script src="script/food-items.js"></script>
+
+
+</body>
+</html>
